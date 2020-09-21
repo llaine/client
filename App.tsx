@@ -1,32 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
-import { Face, getFaces } from 'services/faces';
+import React from 'react';
+import { Provider } from 'react-redux';
+import RootRouter from 'screens/rootRouter';
+import RootScreen from 'screens/rootScreen';
+import configureStore from 'store';
 
-export default function App() {
-  const [faces, setFaces] = useState<Array<Face>>([]);
-  useEffect(() => {
-    getFaces()
-      .then((result) => {
-        setFaces(result);
-      })
-  }, [])
-
+export default () => {
+  // We could imagine having a Navigator here instead of one screen. 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={faces}
-        renderItem={(item) =>
-          <View>
-            <Text>{item.item.name}</Text>
-          </View>
-        }
-      />
-    </View>
-  );
+    <Provider store={configureStore}>
+      <RootRouter />
+    </Provider>
+  )
 }
- 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

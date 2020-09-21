@@ -1,6 +1,7 @@
 {
   "expo": {
-    "name": "HelloWorld",
+    "name": "The Client",
+    "description": "A simple app that fetches a facelist from the backend and displays this facelist with the user names on the client side",
     "slug": "client",
     "version": "1.0.0",
     "orientation": "portrait",

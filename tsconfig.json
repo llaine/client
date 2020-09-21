@@ -15,6 +15,12 @@
       ],
       "components": [
         "components/*"
+      ],
+      "actions": [
+        "actions/*"
+      ],
+      "reducers": [
+        "reducers/*"
       ]
     }
   }
